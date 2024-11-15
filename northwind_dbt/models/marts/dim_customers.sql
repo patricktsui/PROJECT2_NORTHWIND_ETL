@@ -1,4 +1,4 @@
-ITH source AS (
+WITH source AS (
     SELECT * FROM {{ source('northwind', 'customers') }}
 )
 
