@@ -8,11 +8,11 @@ SELECT
     company_name,
     contact_name,
     contact_title,
-    address,
-    city,
-    region,
-    postal_code,
-    country,
+    address as customer_address,
+    city as customer_city,
+    region as customer_region,
+    postal_code as customer_postal_code,
+    country as customer_country,
     phone,
     fax
 FROM source

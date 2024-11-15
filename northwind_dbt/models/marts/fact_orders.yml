@@ -1,0 +1,75 @@
+# models/marts/fact_orders.yml
+
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Fact table for orders, combining information from orders and order details"
+    columns:
+      - name: order_detail_key
+        description: "The surrogate key for the order detail"
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_key
+        description: "The surrogate key for the customer dimension"
+        tests:
+          - not_null
+
+      - name: employee_key
+        description: "The surrogate key for the employee dimension"
+        tests:
+          - not_null
+
+      - name: product_key
+        description: "The surrogate key for the product dimension"
+        tests:
+          - not_null
+
+      - name: shipper_key
+        description: "The surrogate key for the shipper dimension"
+        tests:
+          - not_null
+
+      - name: ship_address_key
+        description: "The surrogate key for the shipping address dimension"
+        tests:
+          - not_null
+
+      - name: order_id
+        description: "The natural key for the order"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "The date the order was placed"
+        tests:
+          - not_null
+
+      - name: required_date
+        description: "The date the order is required"
+
+      - name: shipped_date
+        description: "The date the order was shipped"
+
+      - name: freight
+        description: "The shipping cost"
+
+      - name: unit_price
+        description: "The price per unit of the product"
+        tests:
+          - not_null
+
+      - name: quantity
+        description: "The quantity of the product ordered"
+        tests:
+          - not_null
+
+      - name: discount
+        description: "The discount applied to the order detail"
+
+      - name: revenue
+        description: "The total revenue for the order detail (unitprice * quantity * (1 - discount))"
+        tests:
+          - not_null

@@ -1,0 +1,55 @@
+# models/marts/dim_products.yml
+
+version: 2
+
+models:
+  - name: dim_products
+    description: "Dimensional table for products, including category information"
+    columns:
+      - name: product_key
+        description: "The surrogate key for the product dimension"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: "The natural key for the product"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "The name of the product"
+        data_tests:
+          - not_null
+
+      - name: quantity_per_unit
+        description: "The quantity of the product per unit"
+
+      - name: unit_price
+        description: "The price per unit of the product"
+
+      - name: units_in_stock
+        description: "The number of units in stock"
+
+      - name: units_on_order
+        description: "The number of units on order"
+
+      - name: reorder_level
+        description: "The reorder level for the product"
+
+      - name: discontinued
+        description: "Whether the product is discontinued (1 for yes, 0 for no)"
+
+      - name: category_id
+        description: "The ID of the product category"
+        data_tests:
+          - not_null
+
+      - name: product_category_name
+        description: "The name of the product category"
+        data_tests:
+          - not_null
+
+      - name: category_description
+        description: "The description of the product category"

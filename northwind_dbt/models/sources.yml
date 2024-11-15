@@ -10,3 +10,9 @@ sources:
       - name: order_details
       - name: products
       - name: suppliers
+      - name: categories
+      - name: shippers
+      - name: employees
+      - name: territories
+      - name: regions
+      - name: employee_territories

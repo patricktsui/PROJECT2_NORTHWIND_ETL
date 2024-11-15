@@ -1,0 +1,48 @@
+# models/marts/fact_order_accumulating.yml
+
+version: 2
+
+models:
+  - name: fact_order_accumulating
+    description: "Simple accumulating fact table derived from fact_orders, focusing on order dates and metrics for customers"
+    columns:
+      - name: order_id
+        description: "The unique identifier for the order"
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_key
+        description: "The surrogate key for the customer dimension"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "The date when the order was placed"
+        tests:
+          - not_null
+
+      - name: required_date
+        description: "The date when the order is required"
+
+      - name: shipped_date
+        description: "The date when the order was shipped"
+
+      - name: total_amount
+        description: "The total amount of the order"
+        tests:
+          - not_null
+
+      - name: total_products
+        description: "The total number of unique products in the order"
+        tests:
+          - not_null
+
+      - name: days_to_required_date
+        description: "Number of days between order date and required date"
+
+      - name: days_to_ship
+        description: "Number of days between order date and shipping date"
+
+      - name: days_early_or_late
+        description: "Number of days the order was shipped early (negative) or late (positive) relative to the required date"

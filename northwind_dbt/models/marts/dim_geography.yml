@@ -1,0 +1,26 @@
+# models/marts/dim_geography.yml
+
+version: 2
+
+models:
+  - name: dim_geography
+    description: "Dimensional table for geographical locations based on customer data"
+    columns:
+      - name: geography_key
+        description: "The surrogate key for the geography dimension"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: country
+        description: "The country name"
+        data_tests:
+          - not_null
+
+      - name: region
+        description: "The region or state within the country"
+
+      - name: city
+        description: "The city name"
+        data_ests:
+          - not_null
