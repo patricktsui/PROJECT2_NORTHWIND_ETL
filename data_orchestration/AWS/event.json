@@ -1,0 +1,10 @@
+[
+  {
+    "Source": "aws.events",
+    "DetailType": "Scheduled Event",
+    "Detail": "{}",
+    "EventBusName": "default",
+    "Resources": ["arn:aws:events:ap-southeast-2:207567793654:rule/run-northwind-dbt-daily"]
+  }
+]
+

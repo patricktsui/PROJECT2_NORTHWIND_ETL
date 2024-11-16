@@ -1,0 +1,21 @@
+aws scheduler create-schedule \
+    --name "run-northwind-dbt-daily" \
+    --schedule-expression "cron(0 2 * * ? *)" \
+    --flexible-time-window "{\"Mode\": \"OFF\"}" \
+    --target "{
+        \"Arn\": \"arn:aws:ecs:ap-southeast-2:207567793654:cluster/Northwind-dbt-cluster\",
+        \"RoleArn\": \"arn:aws:iam::207567793654:role/EventBridgeSchedulerECSRole\",
+        \"EcsParameters\": {
+            \"TaskDefinitionArn\": \"arn:aws:ecs:ap-southeast-2:207567793654:task-definition/northwind-dbt-etl-task\",
+            \"TaskCount\": 1,
+            \"LaunchType\": \"FARGATE\",
+            \"NetworkConfiguration\": {
+                \"awsvpcConfiguration\": {
+                    \"Subnets\": [\"subnet-05e79f2963a1bb178\"],
+                    \"SecurityGroups\": [\"sg-0057b58716880178f\"],
+                    \"AssignPublicIp\": \"ENABLED\"
+                }
+            }
+        }
+    }" \
+    --group-name "dbt-schedules"

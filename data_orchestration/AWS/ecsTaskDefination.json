@@ -1,0 +1,62 @@
+{
+    "family": "northwind-dbt-etl-task",
+    "containerDefinitions": [
+      {
+        "name": "northwind-dbt-container",
+        "image": "207567793654.dkr.ecr.ap-southeast-2.amazonaws.com/northwind-dbt:latest",
+        "essential": true,
+        "environment": [
+          {
+            "name": "DBT_PROFILES_DIR",
+            "value": "."
+          }
+        ],
+        "secrets": [
+          {
+            "name": "SNOWFLAKE_ACCOUNT",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_ACCOUNT::"
+          },
+          {
+            "name": "SNOWFLAKE_USER",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_USER::"
+          },
+          {
+            "name": "SNOWFLAKE_PASSWORD",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_PASSWORD::"
+          },
+          {
+            "name": "SNOWFLAKE_ROLE",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_ROLE::"
+          },
+          {
+            "name": "SNOWFLAKE_DATABASE",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_DATABASE::"
+          },
+          {
+            "name": "SNOWFLAKE_WAREHOUSE",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_WAREHOUSE::"
+          },
+          {
+            "name": "SNOWFLAKE_SCHEMA",
+            "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:207567793654:secret:northwind-snowflake-profiles-4p7AiB:SNOWFLAKE_SCHEMA::"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/northwind-dbt",
+            "awslogs-region": "ap-southeast-2",
+            "awslogs-stream-prefix": "ecs"
+          }
+        }
+      }
+    ],
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::207567793654:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::207567793654:role/ecsTaskRole"
+  }
