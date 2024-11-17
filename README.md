@@ -3,7 +3,7 @@
 This project implements a complete data pipeline for the Northwind database using a modern data stack approach.
 
 ## High level solution architecture
-!(/docs/Northwind%20ETL%20Pipleline%20Solution%20Diagram.png)
+![ssolution diagram](/docs/Northwind%20ETL%20Pipleline%20Solution%20Diagram.png)
 
 ## Project Structure
 
