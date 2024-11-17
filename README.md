@@ -12,10 +12,11 @@ The Northwind ETL pipeline architecture leverages a combination of cloud service
 - `data_integration/`: Contains Airbyte setup for extracting and loading data
 - `data_transformation/`: Houses the dbt project for data transformation
 - `data_orchestration/`: Includes AWS configurations for running and scheduling the pipeline
-- `docs/`: Detailed documentation about the project
-- `tests/`: Integration and unit tests for the pipeline components
+- `data_consumption/`: Includes AWS configurations for running and scheduling the pipeline
+- `diagram/`: Architecture diagram and ER diagram
+- `screen_capture/`: Images provide visual documentation of the process.
 
-## Setup and Usage
+## Configuration and Usage
 
 ### 1. Data Integration
 
@@ -34,18 +35,10 @@ For more details, see the README in the `data_transformation/` directory.
 
 ### 3. Data Orchestration
 
-The `data_orchestration/` directory contains scripts and configurations for AWS services (ECR, ECS, EventBridge).
+The `data_orchestration/` directory contains screenshots and configurations for AWS services (ECR, ECS, EventBridge).
 
 1. Build and push the Docker image to ECR
 2. Set up the ECS task
 3. Configure the EventBridge rule
 
 Detailed instructions are in the README within the `data_orchestration/` directory.
-
-## Documentation
-
-Refer to the `docs/` directory for detailed information about:
-
-- Overall architecture (`architecture.md`)
-- Pipeline overview (`pipeline_overview.md`)
-- Maintenance procedures (`maintenance.md`)
