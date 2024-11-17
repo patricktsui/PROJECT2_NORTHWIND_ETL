@@ -3,7 +3,7 @@
 This project implements a complete data pipeline for the Northwind database using a modern data stack approach.
 
 ## High level solution architecture
-![ssolution diagram](/docs/Northwind%20ETL%20Pipleline%20Solution%20Diagram.png)
+![ssolution diagram](/diagram/Northwind%20ETL%20Pipleline%20Solution%20Diagram.png)
 
 The Northwind ETL pipeline architecture leverages a combination of cloud services and data tools to create a scalable and efficient data processing system. The pipeline begins with data extraction from the Northwind Database which hosted on RDS for PostgresSQL, facilitated by Airbyte running on an Amazon EC2 instance. Airbyte efficiently extracts and loads the data into Snowflake. For data transformation, the architecture employs dbt Core, which runs within containers orchestrated by Amazon ECS with Fargate, ensuring scalable and serverless execution of transformation jobs. These containers are built from images stored in Amazon Elastic Container Registry (ECR), allowing for version control and easy deployment of the transformation logic. The transformed data resides in Snowflake, ready for analytics, while dbt artifacts and logs are securely stored in Amazon S3 for documentation and auditing purposes. To manage the scheduling of these ETL processes, Amazon EventBridge Scheduler is utilised, triggering the dbt runs at predetermined intervals. Sensitive credentials and connection strings are securely managed using AWS Secrets Manager, ensuring a high level of security throughout the pipeline. Finally, the transformed data in Snowflake connected to visualization tools Preset, completing the data pipeline from source to insights.
 
