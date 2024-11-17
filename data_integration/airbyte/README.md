@@ -11,15 +11,18 @@ The following screenshots provide visual documentation of performing full extrac
 
 # Full Extractions
 ![Full sync](/screen_capture/Airbyte_full_sync.jpg)
+
 ![Full sync load](/screen_capture/Airbyte_full_sync_load.jpg)
 
 # Incremental Extractions
 ![Incremental sync](/screen_capture/Airbyte_incremental_sync.jpg)
 
-# 4. Change Data Capture (CD)
+# Change Data Capture (CD)
 ![CDC Configuration](/screen_capture/Airbyte_cdc_postgres_configuration.jpg)
+
 ![CDC](/screen_capture/Airbyte_cdc.jpg)
+
 ![CDC load](/screen_capture/Airbyte_cdc_load.jpg)
 
-# 5. Scheduling
+# Scheduling
 ![Scheduling](/screen_capture/Airbyte_scheduler.jpg)
