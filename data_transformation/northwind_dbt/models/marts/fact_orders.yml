@@ -13,7 +13,6 @@ models:
           - not_null
 
       - name: customer_key
-        description: "The surrogate key for the customer dimension"
         tests:
           - not_null
 
@@ -23,7 +22,6 @@ models:
           - not_null
 
       - name: product_key
-        description: "The surrogate key for the product dimension"
         tests:
           - not_null
 
@@ -38,7 +36,6 @@ models:
           - not_null
 
       - name: order_id
-        description: "The natural key for the order"
         tests:
           - not_null
 
@@ -48,26 +45,21 @@ models:
           - not_null
 
       - name: required_date
-        description: "The date the order is required"
 
       - name: shipped_date
-        description: "The date the order was shipped"
 
       - name: freight
         description: "The shipping cost"
 
-      - name: unit_price
-        description: "The price per unit of the product"
+      - name: order_unit_price
         tests:
           - not_null
 
-      - name: quantity
-        description: "The quantity of the product ordered"
+      - name: order_quantity
         tests:
           - not_null
 
       - name: discount
-        description: "The discount applied to the order detail"
 
       - name: revenue
         description: "The total revenue for the order detail (unitprice * quantity * (1 - discount))"

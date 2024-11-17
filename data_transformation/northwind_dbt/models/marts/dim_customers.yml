@@ -1,0 +1,45 @@
+# models/marts/dim_customers.sql
+
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimension table for customers from the Northwind database"
+    columns:
+      - name: customer_key
+        description: "The surrogate key for the customer dimension"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "The natural key for the customer from the source system"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: company_name
+        description: "The name of the customer company"
+        data_tests:
+          - not_null
+
+      - name: contact_name
+        description: "The name of the primary contact at the customer company"
+
+      - name: contact_title
+        description: "The job title of the primary contact"
+
+      - name: customer_address
+        description: "The street address of the customer"
+
+      - name: customer_city
+        description: "The city where the customer is located"
+
+      - name: customer_region
+        description: "The region or state where the customer is located"
+
+      - name: customer_postal_code
+        description: "The postal code of the customer's address"
+
+      - name: customer_country
+        description: "The country where the customer is located"

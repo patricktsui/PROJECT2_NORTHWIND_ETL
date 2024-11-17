@@ -26,7 +26,7 @@ models:
       - name: quantity_per_unit
         description: "The quantity of the product per unit"
 
-      - name: unit_price
+      - name: product_unit_price
         description: "The price per unit of the product"
 
       - name: units_in_stock

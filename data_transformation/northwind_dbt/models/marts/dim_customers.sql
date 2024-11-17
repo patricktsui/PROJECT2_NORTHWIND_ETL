@@ -13,6 +13,4 @@ SELECT
     region as customer_region,
     postal_code as customer_postal_code,
     country as customer_country,
-    phone,
-    fax
 FROM source

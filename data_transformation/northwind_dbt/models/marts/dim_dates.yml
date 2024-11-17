@@ -1,0 +1,13 @@
+# models/marts/dim_dates.sql
+
+version: 2
+
+models:
+  - name: dim_dates
+    columns:
+
+      - name: date_day
+        description: The natural key of the date table
+        data_tests:
+          - not_null
+          - unique
