@@ -13,7 +13,7 @@ def upload_directory(path, bucket, destination):
             s3_path = os.path.join(destination, relative_path)
             s3.upload_file(local_path, bucket, s3_path)
 
-bucket_name = 'ptsui-northwind-dbt-artifacts'
+bucket_name = 's3_bucket_name'
 artifact_path = '/usr/app/dbt/target'
 destination = f'dbt-artifacts/{datetime.now().strftime("%Y-%m-%d")}'
 
