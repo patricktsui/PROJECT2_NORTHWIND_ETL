@@ -13,6 +13,9 @@ The following screenshots provide visual documentation of the process.
 ## Create containerized dbt [tasks](/data_orchestration/AWS/ecsTaskDefinition.json) using AWS Fargate
 ![ECR Task Definition](/screen_capture/ECS_task_definitions.jpg)
 
+## ECS schedule task by Amazon EventBridge
+![ECR Scheduler](/screen_capture/ECS_scheduled_task.jpg)
+
 ## Sensitive credentials and connection strings are securely managed using AWS Secrets Manager
 ![Secret Manager](/screen_capture/Secret_Manager.jpg)
 
