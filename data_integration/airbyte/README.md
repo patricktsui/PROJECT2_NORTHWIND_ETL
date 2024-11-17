@@ -3,6 +3,9 @@ In this data pipeline, Airbyte, an open-source data integration platform, is hos
 
 The following screenshots provide visual documentation of performing full extractions, incremental extractions, Change Data Capture (CDC), and scheduling the job to run daily at 1:00 AM.
 
+# Dataset Source: RDS for PostgresSQL
+![RDS](/screen_capture/SourceDB_Postgres_RDS.jpg)
+
 # Hosted Airbyte on Amazon EC2
 ![EC2](/screen_capture/Airbyte_EC2.jpg)
 
