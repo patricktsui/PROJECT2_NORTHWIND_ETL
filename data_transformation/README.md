@@ -15,4 +15,4 @@ In this data pipleline, it use dbt Core to transforme the raw Northwind transact
 ![DAG](/diagram/dbt-dag.png)
 
 ## ER Diagram
-![ER Diagram]
+![ER Diagram](/diagram/ER%20Diagram.png)
