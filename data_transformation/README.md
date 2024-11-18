@@ -3,15 +3,16 @@ In this data pipleline, it use dbt Core to transforme the raw Northwind transact
 
 ## List of tables created:
 
-dim_customers
-dim_products
-dim_geography
-dim_dates
-fact_orders
-fact_orders_accumulating (accumulating fact table)
-report_orders (i.e. one big table)
+- dim_customers
+- dim_products
+- dim_geography
+- dim_dates
+- fact_orders
+- fact_orders_accumulating (accumulating fact table)
+- report_orders (i.e. one big table)
 
+## dbt generated DAG
+![DAG](/diagram/dbt-dag.png)
 
-
-[Insert ER Diagram Here]
-Caption: Entity-Relationship diagram showing the star schema with fact_orders at the center, connected to dimension tables (dim_customers, dim_products, dim_employees, dim_dates) via foreign key relationships.
+## ER Diagram
+![ER Diagram]
