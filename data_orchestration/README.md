@@ -10,7 +10,7 @@ The following screenshots provide visual documentation of the process.
 ## Setting up An Amazon Elastic Container Service (ECS) cluster
 ![ECR Cluster](/screen_capture/ECS_cluster.jpg).
 
-## Create containerized dbt [tasks](/data_orchestration/AWS/ecsTaskDefinition.json) using AWS Fargate
+## Create containerized dbt [tasks](/data_orchestration/ecsTaskDefinition.json) using AWS Fargate
 ![ECR Task Definition](/screen_capture/ECS_task_definitions.jpg)
 
 ## ECS schedule task by Amazon EventBridge
